@@ -35,3 +35,12 @@ build/
 
 ### VS Code ###
 .vscode/
+/target/classes/
+/target/generated-sources/
+/target/generated-test-sources/
+/target/maven-status/
+/target/surefire-reports/
+/target/test-classes/
+/target/checkstyle-cachefile
+/target/checkstyle-checker.xml
+/target/checkstyle-result.xml
