@@ -27,7 +27,7 @@ services:
       - $DEBUG_PORT:$DEBUG_PORT
     environment:
       SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:postgresql://teamproject:${POSTGRESDB_PASSWORD}@dpg-cuguq2ggph6c73d6b5gg-a.frankfurt-postgres.render.com/kidty_db",
+        "spring.datasource.url"  : "jdbc:postgresql://teamproject:mwPYph4dT4C99Db8HFND7hcRTNebkaSx@dpg-cuguq2ggph6c73d6b5gg-a.frankfurt-postgres.render.com/kidty_db",
         "spring.datasource.username" : "${POSTGRESDB_USERNAME}",
         "spring.datasource.password" : "${POSTGRESDB_PASSWORD}",
         "spring.jpa.database-platform" : "org.hibernate.dialect.PostgreSQLDialect"

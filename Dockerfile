@@ -8,6 +8,7 @@ RUN java -Djarmode=layertools -jar application.jar extract
 # Final stage
 FROM openjdk:17-jdk-slim
 WORKDIR application
+ENV JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
 COPY --from=builder application/dependencies/ ./
 COPY --from=builder application/spring-boot-loader/ ./
 COPY --from=builder application/snapshot-dependencies/ ./
