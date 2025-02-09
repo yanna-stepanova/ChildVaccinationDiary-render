@@ -1,5 +1,5 @@
 # Builder stage
-FROM openjdk:17-jdk-slim as builder
+FROM maven:3.8.3-openjdk-17 as builder
 COPY . .
 RUN mvn clean package -DskipTests
 #WORKDIR application
@@ -9,9 +9,9 @@ RUN mvn clean package -DskipTests
 
 # Final stage
 FROM openjdk:17-jdk-slim
-COPY --from=builder /target/ChildVaccinationDiary-0.0.1-SNAPSHOT.jar ChildVaccinationDiary.jar
+COPY --from=builder /target/ChildVaccinationDiary-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","ChildVaccinationDiary.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
 #WORKDIR application
 #ENV JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
 #COPY --from=builder application/dependencies/ ./
