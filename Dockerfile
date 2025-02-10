@@ -11,7 +11,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR application
 
 # Set JAVA_TOOL_OPTIONS environment variable for debugging
-ENV JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
+ENV JAVA_TOOL_OPTIONS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
 
 COPY --from=builder application/dependencies/ ./
 COPY --from=builder application/spring-boot-loader/ ./
